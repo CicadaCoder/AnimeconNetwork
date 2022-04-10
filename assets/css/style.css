@@ -81,7 +81,7 @@
      font-size: 20px;
  }
 
- @media (max-width: 35em)
+ @media (max-width: 30em)
  {
 
      .navbar h1
