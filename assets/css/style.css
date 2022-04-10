@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+@font-face {
+    font-family: "Magz";
+    font-weight: 700;
+    src: url(../fonts/Magz.otf);
+}
+
+:root {
+    --main-color: #5E17EB;
+    --hover-color: #2764BA;
+    --box-color: #FDF9F2;
+    --back-box-color: #B8A6C0;
+    --border-color: #000;
+  }
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+ body
+ {
+     font-family: "Magz", sans-serif;
+     background: url(../imgs/bg-img.png);
+     background-position: center;
+     background-size: cover;
+     overflow-x: hidden;
+ }
+
+ .pre_navbar
+ {
+     background: rgba(66, 5, 68, 0.781);
+     padding: 0 0 20px 30px;
+     border: 2px solid var(--border-color);
+     border-bottom-left-radius: 8px;
+     border-bottom-right-radius: 8px;
+ }
+ .navbar
+ {
+     background: var(--box-color);
+     padding: 0 0 20px 30px;
+     border: 2px solid var(--border-color);
+     border-bottom-left-radius: 10px;
+     border-bottom-right-radius: 10px;
+    
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .mobile-nav-toggle
+ {
+     display: none;
+ }
+
+ .navbar h1
+ {
+     
+     padding: 20px 0 0 20px;
+     cursor: pointer;
+ }
+
+ .primary-navigation
+ {
+     list-style: none;
+     padding: 28px 50px 0 0;
+     margin: 0;
+     display: flex;
+     gap: var(--gap, 5rem);
+ }
+
+ nav ul
+ {
+     background: var(--box-color);
+ }
+
+ .primary-navigation a
+ {
+     text-decoration: none;
+     color: var(--border-color);
+     font-size: 20px;
+ }
+
+ @media (max-width: 35em)
+ {
+
+     .navbar h1
+     {
+         font-size: 25px;
+         font-weight: 900;
+     }
+     .primary-navigation
+     {
+         --gap: 3em;
+         z-index: 1000;
+         position: fixed;
+         inset: 0 0 0 30%;
+         flex-direction: column;
+         padding: min(20vh, 10rem) 2em;
+         backdrop-filter: blur(1rem);
+         transform: translateX(100%);
+         height: 20vh;
+         top: 0.350rem;
+         transition: transform 350ms ease-in-out;
+     }
+
+     .primary-navigation a:hover
+     {
+        color: var(--main-color);
+     }
+
+     .primary-navigation[data-visible='true']
+     {
+         transform: translateX(0%);
+     }
+
+     .mobile-nav-toggle
+     {
+         display: block;
+         z-index: 9999;
+         position: absolute;
+         background-image: url("../imgs/ellipsis-h-solid.svg");
+         background-color: transparent;
+         width: 3rem;
+         border: none;
+         aspect-ratio: 1;
+         top: 0.8rem;
+         right: 2rem;
+         transition: 0.2s ease-in-out;
+     }
+
+     .mobile-nav-toggle[aria-expanded='true']
+     {
+         background-image: url("../imgs/ellipsis-v-solid.svg");
+         background-color: transparent;
+         background-repeat: no-repeat;
+         background-position: center;
+     }
+
+     .fas
+     {
+         font-size: 50px;
+         background: var(--box-color);
+     }
+
+     div.content
+     {
+         flex-direction: column;
+         padding: 10px;
+         margin-left: 30px;
+         margin-top: 2em;
+     }
+
+     div.content-info
+     {
+         top: 10rem;
+     }
+
+     form.email-form-btn
+     {
+         margin-top: 20px;
+     }
+    
+     form.email-form-btn input
+     {
+         height: 40px;
+         width: 50vw;
+         border: 3px solid var(--border-color);
+         border-radius: 7px;
+         font-family: "Magz", sans-serif;
+         font-weight: 300;
+         padding-left: 10px;
+     }
+    
+     form.email-form-btn button
+     {
+        height: 40px;
+        width: 20vw;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 2px solid var(--border-color);
+        border-radius: 7px;
+        font-family: "Magz", sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+        background-color: var(--main-color);
+     }
+
+     div.contain-image
+     {
+         background-position: center;
+         background-size: cover;
+         background-repeat: no-repeat;
+     }
+ }
+
+ @supports (backdrop-filter: blur(1rem))
+ {
+     .primary-navigation
+     {
+        background: rgba(255, 255, 255, 0.781);
+        backdrop-filter: blur(1rem); 
+     }
+ }
+
+.content
+ {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 30px;
+     margin-left: 20px;
+     margin-top: 5em;
+ }
+
+ .content h1
+ {
+     font-size: 50px;
+ }
+
+ .content h2
+ {
+     color: var(--main-color);
+ }
+
+ .content h3
+ {
+     font-size: 20px;
+     margin-top: 20px;
+ }
+
+ .email-form-btn
+ {
+     margin-top: 50px;
+ }
+
+ .email-form-btn input
+ {
+     height: 40px;
+     width: 20vw;
+     border: 3px solid var(--border-color);
+     border-radius: 7px;
+     font-family: "Magz", sans-serif;
+     font-weight: 300;
+     padding-left: 10px;
+ }
+
+ .email-form-btn button
+ {
+    height: 40px;
+    width: 7vw;
+    border: 2px solid var(--border-color);
+    border-radius: 7px;
+    font-family: "Magz", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    background-color: var(--main-color);
+ }
+
+ .content-card
+ {
+     background: rgba(66, 5, 68, 0.781);
+     border-radius: 7px;
+ }
+
+ .content-card-frontground
+ {
+    margin-left: 50px;
+    border-radius: 10px;
+ }
+
+ .content-card-frontground img
+ {
+     height: 20em;
+     width: 20em;
+ }
+
+ .email-form-btn a
+ {
+     text-decoration: none;
+     color: var(--border-color);
+ }
+
+ .email-form-btn a:hover
+ {
+     color: rgba(66, 5, 68, 0.781);
+ }
+
+ .content-image img
+ {
+     padding-right: 20px;
+ }
